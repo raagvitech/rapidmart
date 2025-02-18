@@ -23,36 +23,9 @@ RapidMart is a full-stack quick commerce platform designed to provide a seamless
 ```bash
 git clone https://github.com/raagvitech/rapidmart.git
 
-**### 2. Navigate to the project directory:**
-bash
-Copy
-Edit
+### 2. **Navigate to the project directory:**
+
+```bash
 cd FlashMart
-3. Install dependencies:
-bash
-Copy
-Edit
-npm install
-4. Set up environment variables.
-Create a .env.local file in the root of your project and add the necessary configurations:
 
-bash
-Copy
-Edit
-MONGO_URI=your_mongo_connection_string
-ACCESS_TOKEN_SECRET=your_access_token_string
-NEXT_PUBLIC_STRIPE_PUBLISHER_KEY=your_stripe_public_key
-STRIPE_SECRET_KEY=your_stripe_secret_key
-NEXT_PUBLIC_API_KEY=your_firebase_api_key
-NEXT_PUBLIC_APP_ID=your_firebase_app_id
-5. Run the development server:
-bash
-Copy
-Edit
-npm run dev
-Visit the application at http://localhost:3000.
-
-vbnet
-Copy
-Edit
 
