@@ -28,12 +28,12 @@ RapidMart is a full-stack quick commerce platform designed to provide a seamless
 git clone https://github.com/raagvitech/rapidmart.git
 ```
 
-### 2. Navigate to the rapid-mart remote repository from the VS code.
+### 2. Navigate to the rapid-mart remote repository from the VS code in left bottom corner.
 
 ### 3. Navigate to the project directory:
 
 ```bash
-cd FlashMart
+cd rapidmart
 ```
 
 ### 4. Install dependencies:
@@ -62,3 +62,6 @@ npm run dev
 ```
 
 ### 7. Visit the application at [http://localhost:3000](http://localhost:3000).
+
+### 8. If you find any troubleshoot errors related to mongobd connection change the dns by following the below link
+https://www.hellotech.com/guide/for/how-to-change-dns-server-windows-mac#:~:text=Windows%2010%20Computer-,To%[…]20following%20DNS%20server%20address
