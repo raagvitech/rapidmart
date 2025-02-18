@@ -5,7 +5,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import Image from "next/image";
-import './carouselStyles.css'; // Import custom CSS
+import './carouselStyles.css'; 
 
 const CarouselComponent = () => {
   const images = [

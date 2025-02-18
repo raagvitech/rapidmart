@@ -8,7 +8,7 @@ import axios from "axios";
 import { signInSuccess, signOut } from "@/store/userSlice";
 import { useRouter } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
-import CartDrawer from "@/components/ui/CartDrawer"; // Import the CartDrawer component
+import CartDrawer from "@/components/ui/CartDrawer"; 
 const Navbar = () => {
   const [search, setSearch] = useState("");
   const [items, setItems] = useState(0);

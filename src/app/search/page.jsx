@@ -25,9 +25,8 @@ function Page() {
     };
     fetchResults();
   }, [search]);
-  // Function to clear search and redirect to home
   const handleClearSearch = () => {
-    router.push("/"); // Redirect to home page
+    router.push("/"); 
   };
   if (loading) {
     return <div>Loading...</div>;

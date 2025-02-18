@@ -6,16 +6,13 @@ import { AiOutlineClose } from "react-icons/ai";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { toast, Toaster } from "react-hot-toast";
-import axios from "axios";
-import Link from "next/link";
 
 const CartDrawer = ({ isOpen, onClose }) => {
   const dispatch = useDispatch();
   const router = useRouter();
   const items = useSelector((state) => state.cart.items);
-  const totalQuantity = useSelector((state) => state.cart.quantity);
   const totalPrice = useSelector((state) => state.cart.price);
-  const { currentUser } = useSelector((state) => state.user); // Access currentUser from Redux store
+  const { currentUser } = useSelector((state) => state.user); 
   const [selectedTip, setSelectedTip] = useState(null);
   const [customTip, setCustomTip] = useState("");
 
