@@ -13,8 +13,10 @@ const ProductCard = ({ product }) => {
   useEffect(() => {
     if (items[_id]) {
       setCounter(items[_id].qty);
+    } else {
+      setCounter(0); // Ensure counter is set to 0 if the item is not in the cart
     }
-  }, [items]);
+  }, [items, _id]);
 
   const addToCart = (event) => {
     event.stopPropagation();
@@ -50,28 +52,27 @@ const ProductCard = ({ product }) => {
         {counter === 0 ? (
           <button
             onClick={addToCart}
-            className="mt-3 bg-blue-950 text-white text-xs py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300"
+            className="mt-4 bg-green-400 text-white text-xs py-2 px-4 rounded-md hover:bg-green-500 transition duration-300 ease-in-out"
           >
             Add to Cart
           </button>
         ) : (
-          <div className="flex items-center justify-center mt-3">
+          <div className="flex items-center justify-center">
             <button
               id="decrease"
-              className="bg-red-500 text-white font-bold py-1 px-3 rounded-l hover:bg-red-600 transition"
+              className="mt-4 bg-green-400 text-white text-xs py-2 px-4 rounded-l-md hover:bg-green-500 transition duration-200 ease-in-out"
               onClick={removeFromCart}
             >
               -
             </button>
-            <input
-              type="text"
-              value={counter}
-              className="w-12 text-center border border-gray-300 outline-none"
-              readOnly
-            />
+            <span
+              className="mt-4 bg-green-400 text-white text-xs py-2 px-4 font-semibold"
+            >
+              {counter}
+            </span>
             <button
               id="increase"
-              className="bg-green-500 text-white font-bold py-1 px-3 rounded-r hover:bg-green-600 transition"
+              className="mt-4 bg-green-400 text-white text-xs py-2 px-4 rounded-r-md hover:bg-green-500 transition duration-200 ease-in-out"
               onClick={addToCart}
             >
               +

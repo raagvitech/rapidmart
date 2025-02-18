@@ -6,7 +6,8 @@ import { AiOutlineClose } from "react-icons/ai";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { toast, Toaster } from "react-hot-toast";
-import axios from 'axios';
+import axios from "axios";
+import Link from "next/link";
 
 const CartDrawer = ({ isOpen, onClose }) => {
   const dispatch = useDispatch();
@@ -54,7 +55,11 @@ const CartDrawer = ({ isOpen, onClose }) => {
   // Calculate grand total with tip included
   const grandTotal = isCartEmpty
     ? totalPrice
-    : totalPrice + deliveryCharge + handlingCharge + smallCartCharge + (selectedTip === "custom" ? parseFloat(customTip || 0) : selectedTip || 0);
+    : totalPrice +
+      deliveryCharge +
+      handlingCharge +
+      smallCartCharge +
+      (selectedTip === "custom" ? parseFloat(customTip || 0) : selectedTip || 0);
 
   // Handle Checkout button click
   const handleCheckout = () => {
@@ -68,26 +73,47 @@ const CartDrawer = ({ isOpen, onClose }) => {
 
   return (
     <div
-      className={`fixed top-0 right-0 w-full md:w-[400px] h-full bg-white shadow-lg p-4 overflow-y-auto z-50 flex flex-col ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+      className={`fixed top-0 right-0 w-full md:w-[400px] h-full bg-white shadow-lg p-4 overflow-y-auto z-50 flex flex-col ${
+        isOpen ? "translate-x-0" : "translate-x-full"
+      }`}
     >
       <Toaster />
       {/* Header with Checkout button */}
       <div className="flex items-center justify-between border-b pb-2">
-        <h2 className="text-gray-500 font-bold text-center text-lg">Shopping Cart</h2>
-        <button onClick={onClose} className="text-gray-500 hover:text-gray-700 font-medium">
+        <h2 className="text-gray-500 font-bold text-center text-lg">
+          Shopping Cart
+        </h2>
+        <button
+          onClick={onClose}
+          className="text-gray-500 hover:text-gray-700 font-medium"
+        >
           <AiOutlineClose size={24} />
         </button>
       </div>
 
       {/* Cart Items */}
-      <div className="mt-4 flex-1 overflow-y-auto no-scrollbar" style={{ maxHeight: "calc(100vh - 250px)" }}>
-        <h3 className="text-lg font-bold mb-2">Cart Items</h3>
+      <div
+        className="mt-4 flex-1 overflow-y-auto no-scrollbar"
+        style={{ maxHeight: "calc(100vh - 250px)" }}
+      >
+       
+       <div>
+       <h3 className="text-lg font-bold mb-2">Cart Items</h3>
+       
+       </div>
         {isCartEmpty ? (
           <div>
-           <p className="text-gray-500 font-bold text-lg">Your cart is empty! 🛒😞</p>
-            <p className="text-sm text-gray-400">Start adding delicious food to your cart.</p>
+            <p className="text-gray-500 font-bold text-lg">
+              Your cart is empty! 🛒😞
+            </p>
+            <p className="text-sm text-gray-400">
+              Start adding delicious food to your cart.
+            </p>
             {/* Home button */}
-            <Button onClick={onClose} className="mt-4 w-full py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600">
+            <Button
+              onClick={onClose}
+              className="mt-4 w-full py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600"
+            >
               Go to Home
             </Button>
           </div>
@@ -95,20 +121,35 @@ const CartDrawer = ({ isOpen, onClose }) => {
           Object.keys(items).map((key) => {
             const item = items[key];
             return (
-              <div key={key} className="flex items-center justify-between py-3 border-b">
+              <div
+                key={key}
+                className="flex items-center justify-between py-3 border-b"
+              >
                 <div className="flex items-center">
-                  <img src={item.images} alt={item.name} className="w-14 h-14 object-cover rounded mr-3" />
+                  <img
+                    src={item.images}
+                    alt={item.name}
+                    className="w-14 h-14 object-cover rounded mr-3"
+                  />
                   <div>
                     <p className="text-sm font-semibold">{item.name}</p>
                     <p className="text-xs text-gray-600">Price: ₹{item.price}</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <button className="px-2 py-1 bg-gray-200 text-sm font-semibold rounded hover:bg-gray-300" onClick={() => handleRemoveItem(item, key)}>
+                  <button
+                    className="px-2 py-1 bg-gray-200 text-sm font-semibold rounded hover:bg-gray-300"
+                    onClick={() => handleRemoveItem(item, key)}
+                  >
                     -
                   </button>
-                  <p className="w-6 text-center">{item.qty}</p>
-                  <button className="px-2 py-1 bg-gray-200 text-sm font-semibold rounded hover:bg-gray-300" onClick={() => handleAddItem(item, key)}>
+                  <p className="w-6 text-center bg-gray-200 rounded">
+                    {item.qty}
+                  </p>
+                  <button
+                    className="px-2 py-1 bg-gray-200 text-sm font-semibold rounded hover:bg-gray-300"
+                    onClick={() => handleAddItem(item, key)}
+                  >
                     +
                   </button>
                 </div>
@@ -192,6 +233,7 @@ const CartDrawer = ({ isOpen, onClose }) => {
         <div className="mt-4 flex flex-col gap-2">
           <div className="flex items-center justify-between">
             <p className="text-lg font-bold">₹{grandTotal.toFixed(2)}</p>
+
             <Button onClick={handleCheckout} className="px-4 py-2">
               Proceed
             </Button>
