@@ -1,15 +1,6 @@
-# FlashMart - Quick Commerce Website
+# RapidMart - Quick Commerce Website
 
-FlashMart is a full-stack quick commerce platform designed to provide a seamless online shopping experience. The website is built using modern technologies like Next.js, shadcn component library, MongoDB, Firebase, and Stripe for handling payments.
-
-## Deployment
-The project is deployed and live at [FlashMart](https://your-live-site-link.com). It is hosted on Vercel for optimized performance and scalability.
-
-## Test User Credentials
-To experience the platform, you can log in using the test credentials below:
-
-- **Email**: test_user_1@gmail.com
-- **Password**: test_user_1
+RapidMart is a full-stack quick commerce platform designed to provide a seamless online shopping experience. The website is built using modern technologies like Next.js, shadcn component library, MongoDB, Firebase, and Stripe for handling payments.
 
 ## Features
 - **Product Browsing**: Users can easily explore products categorized for quick navigation.
@@ -30,4 +21,4 @@ To experience the platform, you can log in using the test credentials below:
 ### 1. Clone the repository:
 
 ```bash
-git clone https://github.com/sbhuvan455/FlashMart.git
+git clone https://github.com/raagvitech/rapidmart.git
