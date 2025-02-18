@@ -25,5 +25,9 @@ RapidMart is a full-stack quick commerce platform designed to provide a seamless
 
 ```bash
 git clone https://github.com/raagvitech/rapidmart.git
-2. Navigate to the rapidmart branch from VS Code:
-![image](https://github.com/user-attachments/assets/e12d82ef-e36c-4d6d-956b-c8237ddc0a14)
+
+
+### 2. Navigate to the `rapidmart` directory from VS Code:
+
+![image](https://github.com/user-attachments/assets/1a86ae8c-e454-4f5e-952d-1543cd6de2bc)
+
