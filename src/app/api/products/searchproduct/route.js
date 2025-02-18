@@ -9,8 +9,6 @@ export async function GET(request) {
   try {
     const searchParams = request.nextUrl.searchParams;
     const query = searchParams.get("query");
-    // query is "hello" for /api/search?query=hello
-
     if(!query) throw new ApiError(400, "query not found");
 
     const data = await Product.aggregate([

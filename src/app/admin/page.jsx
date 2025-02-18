@@ -31,8 +31,6 @@ const ProductForm = () => {
     try {
 
       const response = await axios.post("/api/products/addproduct", formData);
-      console.log(response);
-
       alert("Product created successfully!");
 
       setFormData({
@@ -44,8 +42,6 @@ const ProductForm = () => {
       });
 
     } catch (error) {
-
-      console.error("Error creating product:", error);
       alert("Error creating product. Please try again.");
     }
   };
@@ -54,7 +50,7 @@ const ProductForm = () => {
     const selectedFile = event.target.files[0];
 
     if (!selectedFile) {
-      return; // No file selected, do nothing
+      return; 
     }
 
     // Get Firebase Storage reference
@@ -71,7 +67,6 @@ const ProductForm = () => {
       (snapshot) => {
         const progress =
           (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        console.log(`Upload progress: ${Math.round(progress)}%`);
         setFileUpload(`${Math.round(progress)}%`);
       },
       (error) => {

@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Link from "next/link";
 import { Skeleton } from "@/components/ui/skeleton";
 import ProductCard from "@/components/ProductCards";
 import CarouselComponent from "@/components/ui/CarouselComponent";
@@ -110,7 +109,7 @@ const Page = () => {
             </h1>
 
             {/* Updated Grid: Now 4 products per row on large screens */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
               {selectedCategory === "All Categories" ? (
                 categoryData
                   .flat()

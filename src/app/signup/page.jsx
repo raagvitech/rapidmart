@@ -32,14 +32,11 @@ const Page = () => {
       const response = res.data;
 
       dispatch(signInSuccess(response.data))
-
-      console.log(response)
       toast.success("Login success")
       router.push('/')
 
     } catch (err) {
       dispatch(signInFailure(err.response.data))
-      console.log(err)
       toast.error(err.response.data.message)
     }
 

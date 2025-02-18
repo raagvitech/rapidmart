@@ -6,12 +6,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
 import { signInStart, signInSuccess, signInFailure } from '@/store/userSlice.js';
-// import OAuth from '@/components/Oauth';
 
 const Page = () => {
-
   const router = useRouter()
-
   const [formData, setFormData] = useState({
     email: "",
     password: ""
@@ -26,19 +23,14 @@ const Page = () => {
     
     try {
       dispatch(signInStart())
-      console.log("formData: ", formData);
       const res = await axios.post("/api/users/login", formData);
       const response = res.data;
-      console.log(response)
       dispatch(signInSuccess(response.data))
-
-      console.log(response)
       toast.success("Login success")
       router.push('/')
 
     } catch (err) {
       dispatch(signInFailure(err.response.data))
-      console.log(err)
       toast.error(err.response.data.message)
     }
 

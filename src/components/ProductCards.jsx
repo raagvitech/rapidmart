@@ -14,7 +14,7 @@ const ProductCard = ({ product }) => {
     if (items[_id]) {
       setCounter(items[_id].qty);
     } else {
-      setCounter(0); // Ensure counter is set to 0 if the item is not in the cart
+      setCounter(0);
     }
   }, [items, _id]);
 

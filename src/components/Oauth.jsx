@@ -25,13 +25,9 @@ export default function OAuth() {
     )
 
     const response = res.data;
-    console.log(data);
-
     if(!res.data.success) dispatch(signInFailure(res.message));
     
     if(res.data.success){
-      console.log("Hello world!");
-      console.log(res.message);
       dispatch(signInSuccess(response));
       router.push("/");
     }
